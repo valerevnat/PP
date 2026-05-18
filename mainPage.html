@@ -525,15 +525,29 @@
       margin-bottom: 20px;
     }
 
+    .footer__solo{
+      margin: 0;
+    }
+
+    .footer__column{
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
     .footer__links {
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     .footer__link {
-      font-size: 13px;
-      color: #555;
+      font-size: 12px;
+      font-weight: 400;
       transition: var(--transition);
+    }
+
+    .footer__contacts{
+      font-weight: 600;
     }
 
     .footer__link:hover {
@@ -548,6 +562,12 @@
 
     .footer__mobile {
       display: none;
+    }
+
+    .footer__language-info{
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: underline;
     }
 
     .footer-accordion {
@@ -973,7 +993,7 @@
         <article class="hero__banner">
 
           <img
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop"
+            src="./assets/svg/Photo.svg"
             alt="Hero Banner"
           />
 
@@ -1021,7 +1041,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1038,7 +1058,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1055,7 +1075,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1072,7 +1092,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1089,7 +1109,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1106,7 +1126,7 @@
             <article class="category">
               <div class="category__image">
                 <img
-                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=500&auto=format&fit=crop"
+                  src="./assets/svg/Photo.svg"
                   alt=""
                 />
               </div>
@@ -1146,7 +1166,7 @@
         <article class="hero__banner">
 
           <img
-            src="https://images.unsplash.com/photo-1518611012118-f847e056574d?q=80&w=1800&auto=format&fit=crop"
+            src="./assets/svg/Photo.svg"
             alt="Second Banner"
           />
 
@@ -1259,76 +1279,83 @@
   </div>
 
   <!-- ПИЛОНЫ -->
-  <div>
-    <h3 class="footer__title">Пилоны</h3>
+  <div class="footer__column">
+    <div>
+      <h3 class="footer__title">Пилоны</h3>
 
-    <ul class="footer__links">
-      <li><a class="footer__link" href="#">Пилоны статика</a></li>
-      <li><a class="footer__link" href="#">Пилоны с вращением</a></li>
-      <li><a class="footer__link" href="#">Подиумы с пилоном (сцены)</a></li>
-      <li><a class="footer__link" href="#">Аксессуары для пилонов</a></li>
-      <li><a class="footer__link" href="#">Маты для пилонов</a></li>
-    </ul>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Пилоны статика</a></li>
+        <li><a class="footer__link" href="#">Пилоны с вращением</a></li>
+        <li><a class="footer__link" href="#">Подиумы с пилоном (сцены)</a></li>
+        <li><a class="footer__link" href="#">Аксессуары для пилонов</a></li>
+        <li><a class="footer__link" href="#">Маты для пилонов</a></li>
+      </ul>
+    </div>
 
-    <h3 class="footer__title footer__title--inner">
+    <h3 class="footer__title footer__solo">
       Магнезии
     </h3>
 
-    <h3 class="footer__title footer__title--inner">
-      Аксессуары
-    </h3>
+    <div>
+      <h3 class="footer__title footer__title--inner">
+        Аксессуары
+      </h3>
 
-    <ul class="footer__links">
-      <li><a class="footer__link" href="#">Перчатки, нарукавники, напульсники</a></li>
-      <li><a class="footer__link" href="#">Маски</a></li>
-      <li><a class="footer__link" href="#">Аксессуары для сценического образа</a></li>
-      <li><a class="footer__link" href="#">Повязки</a></li>
-      <li><a class="footer__link" href="#">Портупеи, Подвязки и Пояса</a></li>
-      <li><a class="footer__link" href="#">Сумки и рюкзаки</a></li>
-    </ul>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Перчатки, нарукавники, напульсники</a></li>
+        <li><a class="footer__link" href="#">Маски</a></li>
+        <li><a class="footer__link" href="#">Аксессуары для сценического образа</a></li>
+        <li><a class="footer__link" href="#">Повязки</a></li>
+        <li><a class="footer__link" href="#">Портупеи, Подвязки и Пояса</a></li>
+        <li><a class="footer__link" href="#">Сумки и рюкзаки</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- ОБОРУДОВАНИЕ -->
-  <div>
-    <h3 class="footer__title">Оборудование</h3>
+  <div class="footer__column">
+    <div>
+      <h3 class="footer__title">Оборудование</h3>
 
-    <ul class="footer__links">
-      <li><a class="footer__link" href="#">Гантели и утяжелители</a></li>
-      <li><a class="footer__link" href="#">Инвентарь для занятий</a></li>
-      <li><a class="footer__link" href="#">Коврики</a></li>
-    </ul>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Гантели и утяжелители</a></li>
+        <li><a class="footer__link" href="#">Инвентарь для занятий</a></li>
+        <li><a class="footer__link" href="#">Коврики</a></li>
+      </ul>
+    </div>
 
-    <h3 class="footer__title footer__title--inner">
-      Сувениры
-    </h3>
+    <div>
+      <h3 class="footer__title footer__title--inner">
+        Сувениры
+      </h3>
 
-    <ul class="footer__links">
-      <li><a class="footer__link" href="#">Игрушки антистресс</a></li>
-      <li><a class="footer__link" href="#">Украшения</a></li>
-      <li><a class="footer__link" href="#">Подарочные наборы</a></li>
-      <li><a class="footer__link" href="#">Подарочные сертификаты</a></li>
-      <li><a class="footer__link" href="#">Сувениры</a></li>
-    </ul>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Игрушки антистресс</a></li>
+        <li><a class="footer__link" href="#">Украшения</a></li>
+        <li><a class="footer__link" href="#">Подарочные наборы</a></li>
+        <li><a class="footer__link" href="#">Подарочные сертификаты</a></li>
+        <li><a class="footer__link" href="#">Сувениры</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- ИНФОРМАЦИЯ -->
-  <div>
+  <div class="footer__column"> 
+    <div>
     <h3 class="footer__title">Распродажа</h3>
+      <h3 class="footer__title footer__title--inner">
+        Информация
+      </h3>
 
-    <h3 class="footer__title footer__title--inner">
-      Информация
-    </h3>
-
-    <ul class="footer__links">
-      <li><a class="footer__link" href="#">Контакты</a></li>
-      <li><a class="footer__link" href="#">Доставка и оплата</a></li>
-      <li><a class="footer__link" href="#">Возврат и обмен</a></li>
-      <li><a class="footer__link" href="#">Программа лояльности</a></li>
-      <li><a class="footer__link" href="#">Оптовым покупателям</a></li>
-    </ul>
-  </div>
-
-  <!-- КОНТАКТЫ -->
+      <ul class="footer__links">
+        <li><a class="footer__link" href="#">Контакты</a></li>
+        <li><a class="footer__link" href="#">Доставка и оплата</a></li>
+        <li><a class="footer__link" href="#">Возврат и обмен</a></li>
+        <li><a class="footer__link" href="#">Программа лояльности</a></li>
+        <li><a class="footer__link" href="#">Оптовым покупателям</a></li>
+      </ul>
+    </div>
+    <!-- КОНТАКТЫ -->
   <div>
     <h3 class="footer__title">
       Бесплатные номера
@@ -1336,33 +1363,36 @@
 
     <ul class="footer__links">
       <li>
-        <a class="footer__link" href="#">
+        <a class="footer__link footer__contacts" href="#">
           8 (800) 555 27 26 Москва
         </a>
       </li>
 
       <li>
-        <a class="footer__link" href="#">
+        <a class="footer__link footer__contacts" href="#">
           8 (499) 504 98 76 Россия
         </a>
       </li>
+
+      <li>
+          <div class="footer__language">
+
+            <img
+              src="./assets/svg/Language_black.svg"
+              alt="Language"
+              class="icon icon--language_black"
+            />
+
+            <a class="footer__language-info" href="#">Русский</a>
+
+            <a class="footer__language-info" href="#">RUB - ₽</a>
+
+          </div>
+      </li>
     </ul>
-
-    <div class="footer__language">
-
-      <img
-        src="./assets/svg/Language_black.svg"
-        alt="Language"
-        class="icon icon--language_black"
-      />
-
-      <a href="#">Русский</a>
-
-      <a href="#">RUB - ₽</a>
-
-    </div>
+  
   </div>
-
+  </div>
 </div>
 
       <!-- MOBILE -->
