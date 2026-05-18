@@ -1,0 +1,1472 @@
+<!-- ```html id="pure-passion-responsive" -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Pure Passion</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f3f3f3;
+      --white: #ffffff;
+      --text: #1d1d1d;
+      --muted: #6b6b6b;
+      --border: #d8d8d8;
+      --purple: #6b3f93;
+
+      --container-xl: 1600px;
+      --container-lg: 1240px;
+
+      --transition: .25s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container-lg));
+      margin-inline: auto;
+    }
+
+    .container-wide {
+      width: min(100% - 40px, var(--container-xl));
+      margin-inline: auto;
+    }
+
+    /* ======================================
+       ICONS
+    ====================================== */
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .icon--circle {
+      border: 1px solid var(--purple);
+      border-radius: 50%;
+    }
+
+    .icon--search::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid var(--purple);
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+
+    .icon--search::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 1.5px;
+      background: var(--purple);
+      transform: rotate(45deg);
+      right: 0;
+      bottom: 1px;
+    }
+
+    .icon--burger {
+      width: 24px;
+      height: 18px;
+    }
+
+    .icon--burger span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--purple);
+    }
+
+    .icon--burger span:nth-child(1) {
+      top: 0;
+    }
+
+    .icon--burger span:nth-child(2) {
+      top: 8px;
+    }
+
+    .icon--burger span:nth-child(3) {
+      bottom: 0;
+    }
+
+    .icon--like {
+      width: 32px;
+      height: 26px;
+    }
+
+    .icon--login {
+      font-size: 18px;
+    }
+
+    .icon--cart {
+      width: 20px;
+      height: 26px;
+    }
+
+    .icon--location {
+        width: 16px;
+        height: 23px;
+    }
+
+    .icon--planet{
+      font-size: 26px;
+    }
+
+    .icon--language_black {
+      width: 20px;
+        height: 20px;
+    }
+
+    .icon--phone {
+      font-size: 15px;
+    }
+
+    .icon--MasterCard {
+      width: 48px;
+      height: 38px;
+    }
+
+    .icon--VISA {
+      width: 58px;
+      height: 19px;
+    }
+
+    .icon--MIR {
+      width: 69px;
+      height: 20px;
+    }
+
+    .icon--Yandex {
+      width: 76px;
+      height: 26px;
+    }
+
+    .icon--logo {
+      width: 64px;
+      height: 64px;
+    }
+
+    /* ======================================
+       HEADER
+    ====================================== */
+
+    .topbar {
+      background: var(--white);
+    }
+
+    .topbar__inner {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 12px;
+    }
+
+    .topbar__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      color: #000000;
+      font-size: 13px;
+    }
+
+    .topbar__phone-group {
+        display: flex;
+        gap: 25px;
+    }
+
+    .topbar__groupe{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        font-size: 13px;
+    }
+
+    .header {
+      background: var(--white);
+    }
+
+    .header__top {
+      padding:  0 0 28px 0;
+      position: relative;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo__wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo__circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--purple);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .logo__text {
+      font-family: GothAm Pro;
+      color: var(--purple);
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: .04em;
+    }
+
+    .header__actions {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .header__mobile {
+      display: none;
+    }
+
+    .nav {
+      padding-bottom: 20px;
+    }
+
+    .nav__menu {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .nav__link {
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav__link:hover {
+      color: var(--purple);
+    }
+
+    .promo {
+      padding: 16px 0 32px;
+    }
+
+    .promo__grid {
+      display: grid;
+      max-width: 900px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.4;
+      margin: auto;
+    }
+
+    .promo__info{
+        max-width: 240px;
+
+    }
+
+    /* ======================================
+       HERO
+    ====================================== */
+
+    .hero {
+      margin-bottom: 33px;
+    }
+
+    .hero__banner {
+      position: relative;
+      overflow: hidden;
+      max-width: 957px;
+      min-height: 568px;
+      margin: auto;
+    }
+
+    .hero__banner img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.72),
+          rgba(0,0,0,.12)
+        );
+    }
+
+    .hero__content {
+      position: absolute;
+      left: 50%;
+      bottom: 72px;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding-inline: 20px;
+    }
+
+    .hero__title {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .hero__text {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      width: 129px;
+      height: 31px;
+      background: white;
+      color: black;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+    /* ======================================
+       CATEGORIES
+    ====================================== */
+
+    .categories {
+      margin-bottom: 72px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 44px;
+    }
+
+    .categories__wrapper {
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+      gap: 24px;
+      max-width: 957px;
+      margin: auto;
+    }
+
+    .categories__arrow {
+      font-size: 34px;
+      transition: var(--transition);
+    }
+
+    .categories__arrow:hover {
+      color: var(--purple);
+    }
+
+    .categories__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+
+    .category {
+      text-align: center;
+    }
+
+    .category__image {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+      margin-bottom: 16px;
+    }
+
+    .category__title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .category__subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .slider-dots {
+      display: none;
+    }
+
+    /* ======================================
+       CONTENT
+    ====================================== */
+
+    .seo {
+      margin-bottom: 120px;
+    }
+
+    .seo__text {
+      max-width: 957px;
+      margin-inline: auto;
+      text-align: center;
+      line-height: 20px;
+      font-size: 13px;
+      margin: auto;
+    }
+
+    .seo__btn {
+      display: block;
+      margin: 28px auto 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    /* ======================================
+       FOOTER
+    ====================================== */
+
+    .footer {
+      background: #e9e9e9;
+      padding: 72px 0 48px;
+    }
+
+    .footer__desktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .footer__title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer__links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer__link {
+      font-size: 13px;
+      color: #555;
+      transition: var(--transition);
+    }
+
+    .footer__link:hover {
+      color: var(--purple);
+    }
+    
+    .footer__language {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer__mobile {
+      display: none;
+    }
+
+    .footer-accordion {
+      border-bottom: 1px solid #9d9d9d;
+    }
+
+    .footer-accordion__head {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .footer-accordion__plus {
+      font-size: 34px;
+      font-weight: 300;
+    }
+
+    .footer__bottom {
+      text-align: center;
+    }
+
+    .payments {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 37px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .social {
+      width: 24px;
+      height: 24px;
+    }
+
+    .vertical-line {
+        width: 1px;
+        height: 24px;
+    }
+
+    .footer__email {
+      margin-bottom: 32px;
+      font-size: 12px;
+    }
+
+    .footer__line {
+      width: 486px;
+      max-width: 100%;
+      height: 1px;
+      background: #8c8c8c;
+      margin: 0 auto 28px;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* ======================================
+       TABLET 992
+    ====================================== */
+
+    @media (max-width: 992px) {
+
+      .topbar {
+        display: none;
+      }
+
+      .header__desktop {
+        display: none;
+      }
+
+      .header__mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+      }
+
+      .header__mobile-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header__mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .header__mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header__mobile-logo .logo__circle {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+
+      .promo__grid {
+        gap: 20px;
+        font-size: 12px;
+      }
+
+      .hero__banner {
+        min-height: 520px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .categories__grid {
+        gap: 16px;
+      }
+
+      .footer__desktop {
+        display: none;
+      }
+
+      .footer__mobile {
+        display: block;
+        margin-bottom: 48px;
+      }
+    }
+
+    /* ======================================
+       MOBILE 320
+    ====================================== */
+
+    @media (max-width: 640px) {
+
+      .container,
+      .container-wide {
+        width: min(100% - 32px, 100%);
+      }
+
+      .promo {
+        padding-top: 10px;
+      }
+
+      .promo__grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .promo__grid div:not(:first-child) {
+        display: none;
+      }
+
+      .hero {
+        margin-bottom: 40px;
+      }
+
+      .hero__banner {
+        min-height: 430px;
+      }
+
+      .hero__content {
+        bottom: 34px;
+      }
+
+      .hero__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .hero__text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        width: 160px;
+        height: 48px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+      }
+
+      .categories__wrapper {
+        display: block;
+      }
+
+      .categories__arrow {
+        display: none;
+      }
+
+      .categories__grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 18px;
+        scrollbar-width: none;
+      }
+
+      .categories__grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .category {
+        min-width: 88px;
+      }
+
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .slider-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #666;
+      }
+
+      .slider-dot.active {
+        background: var(--purple);
+        border-color: var(--purple);
+      }
+
+      .seo {
+        margin-bottom: 72px;
+      }
+
+      .seo__text {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .payments {
+        gap: 18px;
+        font-size: 28px;
+      }
+
+      .socials {
+        gap: 12px;
+      }
+
+      .footer {
+        padding-top: 56px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MOBILE HEADER -->
+  <header class="header">
+    <div class="container">
+
+      <div class="header__mobile">
+
+        <div class="header__mobile-left">
+
+          <button class="icon icon--burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a href="#" class="header__mobile-logo">
+            <div class="logo__circle">P</div>
+          </a>
+
+        </div>
+
+        <div class="header__mobile-actions">
+          <span class="icon icon--location"></span>
+          <span class="icon icon--planet"></span>
+          <span class="icon icon--heart"></span>
+          <span class="icon icon--search"></span>
+          <span class="icon icon--user"></span>
+          <span class="icon icon--bag"></span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="header__desktop">
+
+      <div class="topbar">
+        <div class="container-wide topbar__inner">
+
+                <div class="topbar__groupe">
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Language.svg" alt="Валюта и Язык" class="icon icon--planet">
+                        <span>Валюта и Язык</span>
+                    </a>
+
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Location.svg" alt="Магазины" class="icon icon--location">
+                        <span>Магазины</span>
+                    </a>
+
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Phone.svg" alt="Обратный звонок" class="icon icon--phone">
+                        <span>8 (800) 555 27 26</span>
+                    </a>
+
+                    <a href="#" class="topbar__item">
+                        <span>8 (499) 504 98 76</span>
+                    </a>
+
+                    <a href="#" class="topbar__item">
+                        <span>Обратный звонок</span>
+                    </a>
+                </div>
+                <div class="topbar__groupe">
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Login.svg" alt="Войти" class="icon icon--login">
+                        <span>Войти</span>
+                    </a>
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Like.svg" alt="Избранное" class="icon icon--like">
+                        <span>Избранное</span>
+                    </a>
+                    <a href="#" class="topbar__item">
+                        <img src="./assets/svg/Cart.svg" alt="Корзина" class="icon icon--cart">
+                        <span>Корзина</span>
+                    </a>
+                </div>
+        </div>
+      </div>
+
+      <div class="container-wide header__top">
+
+        <div class="logo">
+          <div class="logo__wrap">
+            <img src="./assets/svg/Logo.svg" alt="Logo" class="icon icon--logo">
+            <div class="logo__text">PURE PASSION</div>
+          </div>
+        </div>
+
+        <div class="header__actions">
+          <span class="icon icon--user"></span>
+          <span class="icon icon--heart"></span>
+          <span class="icon icon--bag"></span>
+        </div>
+
+      </div>
+
+      <nav class="nav">
+        <div class="container-wide">
+
+          <ul class="nav__menu">
+            <li><a class="nav__link" href="#">Одежда</a></li>
+            <li><a class="nav__link" href="#">Обувь</a></li>
+            <li><a class="nav__link" href="#">Пилоны</a></li>
+            <li><a class="nav__link" href="#">Магнезия</a></li>
+            <li><a class="nav__link" href="#">Аксессуары</a></li>
+            <li><a class="nav__link" href="#">Оборудование</a></li>
+            <li><a class="nav__link" href="#">Подарки</a></li>
+            <li><a class="nav__link" href="#">Распродажа</a></li>
+          </ul>
+
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- PROMO -->
+  <section class="promo">
+    <div class="container-wide">
+
+      <div class="promo__grid">
+
+        <div class="promo__info">
+          Бесплатная доставка при покупке от 2000 Руб
+          для участников программы лояльности H&M
+        </div>
+
+        <div class="promo__info">
+          Станьте участником нашей программы лояльности
+          сейчас и получите скидку 10% на ваш первый заказ
+        </div>
+
+        <div class="promo__info">
+          Вход в наши магазины возможен в соответствии
+          с ограничениями действующими в вашем регионе.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container-wide">
+
+        <article class="hero__banner">
+
+          <img
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop"
+            alt="Hero Banner"
+          />
+
+          <div class="hero__overlay"></div>
+
+          <div class="hero__content">
+
+            <h1 class="hero__title">
+              Заголовок сочетайте стиль и комфорт
+            </h1>
+
+            <p class="hero__text">
+              Подзаголовок новинки для отдыха, которые
+              наполняют зимние дни уютом
+            </p>
+
+            <button class="btn">
+              Смотреть
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+      <div class="container-wide">
+
+        <h2 class="section-title">
+          Самое актуальное сейчас
+        </h2>
+
+        <div class="categories__wrapper">
+
+          <button class="categories__arrow">
+            ←
+          </button>
+
+          <div class="categories__grid">
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Одежда
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Обувь
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Пилоны
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Магнезии
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Аксессуары
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+            <article class="category">
+              <div class="category__image">
+                <img
+                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=500&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+
+              <h3 class="category__title">
+                Сувениры
+              </h3>
+
+              <p class="category__subtitle">
+                Подкатегория
+              </p>
+            </article>
+
+          </div>
+
+          <button class="categories__arrow">
+            →
+          </button>
+
+        </div>
+
+        <div class="slider-dots">
+          <span class="slider-dot active"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+          <span class="slider-dot"></span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECOND HERO -->
+    <section class="hero">
+      <div class="container-wide">
+
+        <article class="hero__banner">
+
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-f847e056574d?q=80&w=1800&auto=format&fit=crop"
+            alt="Second Banner"
+          />
+
+          <div class="hero__overlay"></div>
+
+          <div class="hero__content">
+
+            <h2 class="hero__title">
+              Заголовок сочетайте стиль и комфорт
+            </h2>
+
+            <p class="hero__text">
+              Подзаголовок новинки для отдыха, которые
+              наполняют зимние дни уютом
+            </p>
+
+            <button class="btn">
+              Смотреть
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SEO -->
+    <section class="seo">
+      <div class="container">
+
+        <p class="seo__text">
+          Текст для поисковика (ключевые слова для SEO).
+           Обновите свой повседневный гардероб моделями
+            из нашего ассортимента женской одежды.
+             У нас вы найдете все самые актуальные новинки,
+              базовые модели на каждый день, к примеру,
+               женские топы и юбки, а также стильный трикотаж
+                и уютную одежду для отдыха. У вас планируется
+                 вечерний выход? В нашей коллекции женских платьев
+                  есть модели длиной мини, миди и макси, идеальные
+                   для летних вечеров, а в нашем ассортименте стильных
+                    джинсов и брюк представлены модели для любого типа фигуры.
+                     В насыщенные дни вас выручат наши стильные комплекты,
+                      а если нужно одеться потеплее, вы всегда найдете то,
+                       что вам по душе, в нашем ассортименте женских курток и пальто.
+        </p>
+
+        <button class="seo__btn">
+          Развернуть
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <!-- DESKTOP -->
+      <!-- DESKTOP -->
+<div class="footer__desktop">
+
+  <!-- ОДЕЖДА -->
+  <div>
+    <h3 class="footer__title">Одежда</h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Топы</a></li>
+      <li><a class="footer__link" href="#">Шорты</a></li>
+      <li><a class="footer__link" href="#">Легинсы</a></li>
+      <li><a class="footer__link" href="#">Топы удлиненные, майки</a></li>
+      <li><a class="footer__link" href="#">Боди</a></li>
+      <li><a class="footer__link" href="#">Сценический образ</a></li>
+      <li><a class="footer__link" href="#">Спортивное белье</a></li>
+      <li><a class="footer__link" href="#">Комбинезоны</a></li>
+      <li><a class="footer__link" href="#">Кофты</a></li>
+      <li><a class="footer__link" href="#">Для мужчин</a></li>
+      <li><a class="footer__link" href="#">Бриджи и велосипедки</a></li>
+      <li><a class="footer__link" href="#">Купальники</a></li>
+      <li><a class="footer__link" href="#">Кроп-топы, болеро</a></li>
+      <li><a class="footer__link" href="#">Брюки</a></li>
+      <li><a class="footer__link" href="#">Для детей</a></li>
+      <li><a class="footer__link" href="#">Футболки</a></li>
+      <li><a class="footer__link" href="#">Комплекты</a></li>
+      <li><a class="footer__link" href="#">Юбки</a></li>
+    </ul>
+  </div>
+
+  <!-- ОБУВЬ -->
+  <div>
+    <h3 class="footer__title">Обувь</h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Фитнес бикини туфли</a></li>
+      <li><a class="footer__link" href="#">Аксессуары для обуви</a></li>
+      <li><a class="footer__link" href="#">Туфли на платформе</a></li>
+      <li><a class="footer__link" href="#">Сапоги на платформе</a></li>
+      <li><a class="footer__link" href="#">Кроссовки</a></li>
+      <li><a class="footer__link" href="#">Защита на стрипы</a></li>
+      <li><a class="footer__link" href="#">Балетки</a></li>
+      <li><a class="footer__link" href="#">Полуспожки</a></li>
+      <li><a class="footer__link" href="#">Джазовки</a></li>
+      <li><a class="footer__link" href="#">Повседневная обувь</a></li>
+      <li><a class="footer__link" href="#">Праздничная обувь</a></li>
+    </ul>
+  </div>
+
+  <!-- ПИЛОНЫ -->
+  <div>
+    <h3 class="footer__title">Пилоны</h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Пилоны статика</a></li>
+      <li><a class="footer__link" href="#">Пилоны с вращением</a></li>
+      <li><a class="footer__link" href="#">Подиумы с пилоном (сцены)</a></li>
+      <li><a class="footer__link" href="#">Аксессуары для пилонов</a></li>
+      <li><a class="footer__link" href="#">Маты для пилонов</a></li>
+    </ul>
+
+    <h3 class="footer__title footer__title--inner">
+      Магнезии
+    </h3>
+
+    <h3 class="footer__title footer__title--inner">
+      Аксессуары
+    </h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Перчатки, нарукавники, напульсники</a></li>
+      <li><a class="footer__link" href="#">Маски</a></li>
+      <li><a class="footer__link" href="#">Аксессуары для сценического образа</a></li>
+      <li><a class="footer__link" href="#">Повязки</a></li>
+      <li><a class="footer__link" href="#">Портупеи, Подвязки и Пояса</a></li>
+      <li><a class="footer__link" href="#">Сумки и рюкзаки</a></li>
+    </ul>
+  </div>
+
+  <!-- ОБОРУДОВАНИЕ -->
+  <div>
+    <h3 class="footer__title">Оборудование</h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Гантели и утяжелители</a></li>
+      <li><a class="footer__link" href="#">Инвентарь для занятий</a></li>
+      <li><a class="footer__link" href="#">Коврики</a></li>
+    </ul>
+
+    <h3 class="footer__title footer__title--inner">
+      Сувениры
+    </h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Игрушки антистресс</a></li>
+      <li><a class="footer__link" href="#">Украшения</a></li>
+      <li><a class="footer__link" href="#">Подарочные наборы</a></li>
+      <li><a class="footer__link" href="#">Подарочные сертификаты</a></li>
+      <li><a class="footer__link" href="#">Сувениры</a></li>
+    </ul>
+  </div>
+
+  <!-- ИНФОРМАЦИЯ -->
+  <div>
+    <h3 class="footer__title">Распродажа</h3>
+
+    <h3 class="footer__title footer__title--inner">
+      Информация
+    </h3>
+
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#">Контакты</a></li>
+      <li><a class="footer__link" href="#">Доставка и оплата</a></li>
+      <li><a class="footer__link" href="#">Возврат и обмен</a></li>
+      <li><a class="footer__link" href="#">Программа лояльности</a></li>
+      <li><a class="footer__link" href="#">Оптовым покупателям</a></li>
+    </ul>
+  </div>
+
+  <!-- КОНТАКТЫ -->
+  <div>
+    <h3 class="footer__title">
+      Бесплатные номера
+    </h3>
+
+    <ul class="footer__links">
+      <li>
+        <a class="footer__link" href="#">
+          8 (800) 555 27 26 Москва
+        </a>
+      </li>
+
+      <li>
+        <a class="footer__link" href="#">
+          8 (499) 504 98 76 Россия
+        </a>
+      </li>
+    </ul>
+
+    <div class="footer__language">
+
+      <img
+        src="./assets/svg/Language_black.svg"
+        alt="Language"
+        class="icon icon--language_black"
+      />
+
+      <a href="#">Русский</a>
+
+      <a href="#">RUB - ₽</a>
+
+    </div>
+  </div>
+
+</div>
+
+      <!-- MOBILE -->
+      <div class="footer__mobile">
+
+        <div class="footer-accordion">
+          <div class="footer-accordion__head">
+            <span>Одежда</span>
+            <span class="footer-accordion__plus">+</span>
+          </div>
+        </div>
+
+        <div class="footer-accordion">
+          <div class="footer-accordion__head">
+            <span>Обувь</span>
+            <span class="footer-accordion__plus">+</span>
+          </div>
+        </div>
+
+        <div class="footer-accordion">
+          <div class="footer-accordion__head">
+            <span>Пилоны</span>
+            <span class="footer-accordion__plus">+</span>
+          </div>
+        </div>
+
+        <div class="footer-accordion">
+          <div class="footer-accordion__head">
+            <span>Магнезии</span>
+            <span class="footer-accordion__plus">+</span>
+          </div>
+        </div>
+
+        <div class="footer-accordion">
+          <div class="footer-accordion__head">
+            <span>Аксессуары</span>
+            <span class="footer-accordion__plus">+</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="footer__bottom">
+
+        <div class="payments">
+            <img src="./assets/svg/MasterCard.svg" alt="MasterCard" class="icon icon--MasterCard">
+            <img src="./assets/svg/VISA.svg" alt="VISA" class="icon icon--VISA">
+            <img src="./assets/svg/MIR.svg" alt="МИР" class="icon icon--MIR">
+            <img src="./assets/svg/Yandex.svg" alt="Яндекс" class="icon icon--Yandex">
+        </div>
+
+        <div class="socials">
+          <a class="social" href="#">
+            <img src="./assets/svg/Inst_black.svg" alt="Instagram">
+          </a>
+          <img src="./assets/svg/VerticalLine.svg" alt="Instagram" class="vertical-line">
+          <a class="social" href="#">
+            <img src="./assets/svg/WhatsApp_black.svg" alt="WhatsApp">
+          </a>
+          <a class="social" href="#">
+            <img src="./assets/svg/Telegram_black.svg" alt="Telegram">
+          </a>
+          <a class="social" href="#">
+            <img src="./assets/svg/Viber_black.svg" alt="Viber">
+          </a>
+
+        </div>
+
+        <div class="footer__email">
+          Email: sales@purepassion.ru
+        </div>
+
+        <div class="footer__line"></div>
+
+        <div class="copyright">
+          © Copyright 2022 Pure Passion.<br />
+          All Rights Reserved.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    // SIMPLE FOOTER ACCORDION
+
+    const accordions = document.querySelectorAll(
+      '.footer-accordion'
+    );
+
+    accordions.forEach((item) => {
+
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
